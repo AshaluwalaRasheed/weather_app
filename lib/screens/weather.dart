@@ -35,9 +35,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
         },
       ),
     );
-    
+
     // cityController.clear();
   }
+
   @override
   void dispose() {
     cityController.dispose();
@@ -49,7 +50,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
     getWeather();
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -131,34 +131,163 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 child: WeatherDetails(weather: weatherInfo!),
               ),
             ),
-            SizedBox(height: 7),
-            Row(
+            SizedBox(height: 8,),
+            Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Today',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w800,
-                    color: const Color.fromARGB(255, 255, 246, 246),
+                Container(
+                  height: 100,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color.fromARGB(255, 57, 128, 252),
+                        const Color.fromARGB(255, 3, 226, 255),
+                      ],
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                    ),
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        '+1hr',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Icon(Icons.cloud_sharp, color: Colors.white),
+                      Text(
+                        '${weatherInfo!.temperature.toStringAsFixed(0)}°',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                TextButton.icon(
-                  onPressed: () {},
-                  label: Text(
-                    '7 days',
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 255, 246, 246),
+                Container(
+                  height: 100,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color.fromARGB(255, 57, 128, 252),
+                        const Color.fromARGB(255, 3, 226, 255),
+                      ],
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
                     ),
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(15),
                   ),
-                  icon: Icon(
-                    Icons.navigate_next,
-                    color: const Color.fromARGB(255, 255, 246, 246),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        '+2hr',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Icon(Icons.cloud_circle_sharp, color: Colors.white),
+                      Text(
+                        '${(weatherInfo!.temperature + 1).toStringAsFixed(0)}°',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
                   ),
-                  iconAlignment: IconAlignment.end,
+                ),
+                Container(
+                  height: 100,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color.fromARGB(255, 57, 128, 252),
+                        const Color.fromARGB(255, 3, 226, 255),
+                      ],
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                    ),
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        '+3hr',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Icon(Icons.cloud_circle_sharp, color: Colors.white),
+                      Text(
+                        '${(weatherInfo!.temperature + 1).toStringAsFixed(0)}°',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 100,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color.fromARGB(255, 57, 128, 252),
+                        const Color.fromARGB(255, 3, 226, 255),
+                      ],
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                    ),
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        '+4hr',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Icon(Icons.cloud_outlined, color: Colors.white),
+                      Text(
+                        '${(weatherInfo!.temperature + 2).toStringAsFixed(0)}°',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
+          ),
           ],
         ),
       ),
